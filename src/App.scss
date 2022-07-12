@@ -1,0 +1,141 @@
+ @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&display=swap');
+
+ $sidebarWidth: 15vw;
+ $triangleGapThickness: 40px;
+ $HeaderTriangleBaseHeight: 140px;
+ $HeaderTriangleBaseWidth: 350px;
+
+ $c1: #ff817a;
+ $c2: #ffab5f;
+ $c3: #ffd459;
+ $c4: #f9f871;
+
+.main {
+   font-family: 'Arvo';
+   font-size: 30px;
+   font-weight: 700;
+   //border-width: 1px;
+   //border-style: dashed;
+}
+
+#main {
+   display: flex;
+   height: 100vh;
+   width: 100vw;
+}
+
+#SideDiv {
+   display: inline-flex;
+   flex-direction: column;
+
+   position: fixed;
+   height: 100vh;
+   width: $sidebarWidth;
+}
+
+#SideLogo {
+   color: #FF817A;
+   height:15%;
+   padding-top:20px;
+   stroke: #ffe4df;
+   stroke-width: 20;
+}
+
+#MainDiv {
+   position: absolute;
+   display: inline-flex;
+   flex-direction: column;
+   width: calc(100vw - $sidebarWidth);
+   left: $sidebarWidth;
+}
+
+#HeaderDiv {
+   width: 100%;
+}
+
+#BodyDiv {
+   height: 80%;
+   z-index: -1;
+}
+
+#HeaderText {
+   position: fixed;
+   z-index: 6;
+   top:0px;
+   right:0px;
+   color: #2f4858;
+}
+
+#HeaderImg {
+   mask-image: url(#CirclesMask);
+   position: static;
+   width: calc(100vw - $sidebarWidth);
+   height: fit-content;
+}
+
+#CirclesMask {
+   width: 200px;
+   height: 200px;
+   background-color: white;
+}
+
+#HeaderMask {
+   position: fixed;
+   top:0px;
+}
+
+#HeaderImg img {
+   width: 100%;
+}
+
+#HeaderImgFill {
+   position: relative;
+   width: 100%;
+   height: fit-content;
+}
+
+#test {
+   width: 100%;
+}
+
+
+#SideDiv {
+   background-color: #2f4858;
+}
+
+.HeaderTriangle {
+   position: fixed;
+   width: 0;
+   height: 0;
+
+   top:0px;
+   right:0px;
+}
+
+#HeaderTriangle0 {
+   z-index:5;
+
+   border-top: $HeaderTriangleBaseHeight solid $c1;
+   border-left: $HeaderTriangleBaseWidth solid transparent;
+}
+
+#HeaderTriangle1 {
+   z-index:4;
+
+   border-top: ($HeaderTriangleBaseHeight + $triangleGapThickness*1) solid $c2;
+   border-left: ($HeaderTriangleBaseWidth + $triangleGapThickness*1) solid transparent;
+}
+
+#HeaderTriangle2 {
+   z-index:3;
+
+   border-top: ($HeaderTriangleBaseHeight + $triangleGapThickness*2) solid $c3;
+   border-left: ($HeaderTriangleBaseWidth + $triangleGapThickness*2) solid transparent;
+}
+
+#HeaderTriangle3 {
+   z-index:2;
+
+   border-top: ($HeaderTriangleBaseHeight + $triangleGapThickness*3) solid $c4;
+   border-left: ($HeaderTriangleBaseWidth + $triangleGapThickness*3) solid transparent;
+}
